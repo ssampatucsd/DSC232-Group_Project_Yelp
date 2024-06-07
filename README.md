@@ -3,8 +3,6 @@
 ## Overview
 This repository contains the final project for DSC232, featuring a thorough analysis and the creation of predictive models aimed at predicting 'stars' from user review text. Within, you'll find datasets, analytical scripts, model training algorithms, and results designed to offer companies deeper insights into their customers' experiences. Comprehensive documentation is available to help you navigate each aspect of the project.
 
-Below is the project writeup, and here is the link to our Jupyter Notebook.
-
 ## 1. Introduction
 Why chosen? why is it cool? General/Broader impact of having a good predictive mode. i.e. why is this important? Expand on abstract.
 
