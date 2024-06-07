@@ -149,7 +149,7 @@ Business DataFrame:
   1. State: Top 5 states are PA, FL, TN, IN, MO.
   2. Stars: 4.0 had the highest count, followed by 4.5. Distribution resembles a bell curve that is skewed left.
   3. Category: Top 5 categories are: resturaunts, food, shopping, home services, beauty and spas. Resturaunts had an exceedingly high amount of reviews.
-  4. City: Top 5 cities areL Philadelphia, Tuscon, Tampa, Indianapolis, Nashville. This is consistent with the top 5 states. Further, there were a handful of cities with less than 3 businesses.
+  4. City: Top 5 cities are: Philadelphia, Tuscon, Tampa, Indianapolis, Nashville. This is consistent with the top 5 states. Further, there were a handful of cities with less than 3 businesses.
 
 User DataFrame:
 - Observation count: Total number of users = 1987897
