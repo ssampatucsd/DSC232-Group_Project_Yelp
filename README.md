@@ -121,7 +121,7 @@ The probabilities for each category are computed using the softmax function:
 - Accuracy Metric: Establish an assessment of model accuracy and generalizability.
 - Comparative Analysis:
   
-### 3.4 Model 2: Support Vector Machine
+### 3.4 Model 2: Support Vector Machine with OneVsRest
 Support Vector Machine: Predicts the rating (multi-class) based on user text. Since our target variable contains multiple classes, OneVsRest was also utilized here.
 
 - Train Test Split: Split the dataset into training and testing sets to assess predictive performance and to avoid overfitting/underfitting.
@@ -171,8 +171,8 @@ From the data exploration process, our team concluded that our project requires 
 7. Sentiment Polarity Scores: This contributes to insights into customer sentiments and is helpful in predictive analytics.
 8. Term Frequency-Inverse Document Frequency (TF-IDF): This is useful for feature selection, reducing noise, and information retrieval. 
    
-### 4.3 Model 1: Logistic Regression
-### 4.4 Model 2: Support Vector Machine
+### 4.3 Model 1: Multinomial Logistic Regression
+### 4.4 Model 2: Support Vector Machine with OneVsRest
 ### 4.5 Compare Model Performances
 
 ## 5. Discussion
