@@ -3,6 +3,8 @@
 ## Overview
 This repository contains the final project for DSC232, featuring a thorough analysis and the creation of predictive models aimed at predicting 'stars' from user review text. Within, you'll find datasets, analytical scripts, model training algorithms, and results designed to offer companies deeper insights into their customers' experiences. Comprehensive documentation is available to help you navigate each aspect of the project.
 
+Below is the writeup for this project. Here is the link to our Jupyter Notebook.
+
 ## 1. Introduction
 Yelp Inc. is a widely-used online platform where users can search for and review local businesses. Founded in 2004, it acts as a directory for various businesses, including restaurants, retail stores, services, and more. Yelp provides details about the business such as business hours, contact information, menus, photos, and user-generated reviews. Businesses can claim their Yelp profiles to interact with customers, post updates, and respond to reviews.
 
