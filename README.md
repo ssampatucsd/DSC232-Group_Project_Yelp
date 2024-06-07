@@ -1,27 +1,46 @@
-# DSC232-Group_Project_Yelp
-### Create Environment and Install Dependencies:
+# DSC232: Yelp Reviews
 
-The "requirements.txt" file can be used to install all the necessary packages for all the notebooks in this course.
-Navigate to the folder location where you have downloaded this repository. Then, run "pip install -r requirements.txt". This should create your environment with all necessary packages.
+## Overview
+This repository contains the final project for DSC232, featuring a thorough analysis and the creation of predictive models aimed at predicting 'stars' from user review text. Within, you'll find datasets, analytical scripts, model training algorithms, and results designed to offer companies deeper insights into their customers' experiences. Comprehensive documentation is available to help you navigate each aspect of the project.
 
-Link for data download: https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset
+Below is the project writeup, and here is the link to our Jupyter Notebook.
 
-### Steps Taken for Pre-Processing:
+## 1. Introduction
+Why chosen? why is it cool? General/Broader impact of having a good predictive mode. i.e. why is this important? Expand on abstract.
 
-Our data cleaning and preprocessing phase includes the following steps: handling null values, tokenization, stop words removal, stemming, and TF-IDF. The dataset consists of two columns: text and stars. If the text is missing, it means no review was written, so we simply removed these null values. Tokenization and stop words removal are essential preprocessing steps in Natural Language Processing and text mining. Stop words add little semantic value. Removing these words helps reduce the dimensionality of the text data. We also performed stemming to group words with the same base meaning together. This approach can improve the performance of the model by treating different forms of a word as the same term.
+Yelp Inc. is a widely-used online platform where users can search for and review local businesses. Founded in 2004, it acts as a directory for various businesses, including restaurants, retail stores, services, and more. Yelp provides details about the business such as business hours, contact information, menus, photos, and user-generated reviews. Businesses can claim their Yelp profiles to interact with customers, post updates, and respond to reviews.
 
-### Training and evaluation of the first model:
+Yelp has several positive impacts on businesses, such as increasing visibility, establishing credibility and trust, engaging with customers, gaining market insights, and providing advertising opportunities. For instance, Yelp can help businesses get discovered by new customers, driving foot traffic and online inquiries. However, there are also negative impacts, such as the potential for negative reviews to harm a business's reputation and revenue.
 
-Our dataset was trained on a multinomial logistic regression model. We performed an 80/20 train test split. Our features included review length, sentiment polarity, hashing TF, and TF-IDF. After training we predicted on the test set to obtain the test accuracy.
+This project aims to predict a business's rating out of five stars based on user reviews. We use machine learning techniques to address the challenge of text classification. This predictive goal can provide businesses with insights into what customer experiences are associated with positive and negative reviews. The project is interesting because of its potential positive impact on both businesses and customers. It can enhance the success of businesses and improve customer decision-making, as customers often rely on reviews for their purchasing decisions.
 
-### Where does your model fit in the fitting graph?
+The dataset used in this project is notable for its size and comprehensive information. It is a subset of Yelp's data, containing information about businesses, reviews, and users across eight metropolitan areas in the USA and Canada. The data, sourced directly from Yelp.com, includes 7 million customer reviews and features 150,000 businesses. The credibility, size, and richness of the data were the main reasons for choosing this dataset.
 
-Our first initial model has a test error rate of 37.7%.
+## 2. Figures
 
-### What are the next models you are thinking of and why?
+## 3. Methods
+### 3.1 Data Exploration
+### 3.2 Data Preprocessing
+### 3.3 Model 1: Logistic Regression
+### 3.4 Model 2: Support Vector Machine
 
-We are considering multinomial naive bayes and SVMs as our next models. Multinomial naive bayes are well suited for text classification tasks and can handle multi-class classification. SVMs are also effective for text classification.
+## Results
+### 4.1 Data Exploration
+### 4.2 Data Preprocessing
+### 4.3 Model 1: Logistic Regression
+### 4.4 Model 2: Support Vector Machine
+### 4.5 Compare Model Performances
 
-### Conclusion: What is the conclusion of your 1st model? What can be done to possibly improve it?
+## 5. Discussion
+### Data Exploration: Exploratory Data Analysis
+### Data Preprocessing
+### Model 1: Logistic Regression
+### Model 2: Support Vector Machine
+### General Discussion
+#### Success
+#### Limitations
 
-Our initial model has an error rate of 37.7%. To enhance its performance, we plan to remove some potentially irrelevant features. Specifically, we aim to retrain the model using only the TF-IDF and sentiment polarity features. Additionally, we will experiment with different types of models to see if accuracy improves.
+## 6. Conclusion
+
+## 7. Collaboation
+
