@@ -75,22 +75,25 @@ To arrive at our conclusion of using the review dataset, we had to explore what 
 
 Review DataFrame: Explore text statistics
 - Observation count: Identify the total number of reviews.
-- Column examination: Extract the column names and their respective types.
+- Schema and column examination: Extract the column names and their respective types.
 - Missing data analysis: Detect missing values in the dataset. Missing data should not just be ignored. Often, there are underlying reasons for why this is occuring, so this section focuses on exploring those potential reasons.
+- Duplicate values: Identify observations with duplicate values.
+- Summary statistics: Extract summary statistics for numerical features.
 - Distribution of categorical variables: Explore the distribution of `stars`, `cool`, `funny`, `useful`.
 
 Business DataFrame: Explore business demographics
 - Observation count: Identify the total number of businesses.
-- Column examination: Extract the column names and their respective types.
+- Schema and column examination: Extract the column names and their respective types.
 - Missing data analysis: Detect missing values in the dataset.
 - Value counts for categorical data: Explore value counts for variables `state`, `city`, `stars`, `category` to better understand the demographics in our data.
   
 User DataFrame: Explore user demographics
 - Observation count: Identify the total number of users.
-- Column examination: Extract the column names and their respective types.
+- Schema and column examination: Extract the column names and their respective types.
 - Missing data analysis: Detect missing values in the dataset. Specifically, how many users had no reviews.
 - Summary statistics: Extract summary statistics regarding the review count.
 - Correlations: Explore correlation between `star` and attributes `cool`, `funny`, `useful`.
+- Distribution of number of reviews: Extract the number of reviews by user.
 
 ### 3.2 Data Preprocessing
 1. Selecting features: Select only relevant features for our model. Since we are trying to predict `stars` based on `text`, we only select these features. 
@@ -129,15 +132,44 @@ Support Vector Machine: Predicts the rating (multi-class) based on user text. Si
 
 ## Results
 ### 4.1 Data Exploration
+Review DataFrame: 
+- Observation count: Total number of reviews = 6,990,280.
+- Schema and column examination: To avoid repetition of information, please reference section 3.1.
+- Missing data analysis: Missing values in `text` column indicate users that provided a rating, but failed to include text with their rating.
+- Duplicate values: Multiple duplicate values in `text`, specifically containing "DO NOT PARK HERE!", "I had a terrible experience", "Great place to be."
+- Summary statistics: Average review length is 567.76, however, this variable has a large standard deviation of 527.25. Min review length = 1. Max review length = 5000.
+- Distribution of categorical variables:
+    1. Stars: 5 had the highest value counts by far, followed by 4, then 1. This means that people are far more likely to leave positive reviews for a positive experience over a negative review for a negative experience.
+  2. Cool, Funny, Useful: `useful` had the highest value counts compared to `cool` and `funny`, which intuitively makes sense given the nature of the platform.
+
+Business DataFrame: 
+- Observation count: Total number of businesses = 150,346.
+- Schema and column examination: To avoid repetition of information, please reference section 3.1.
+- Value counts for categorical data: Explore value counts for variables `state`, `city`, `stars`, `category` to better understand the demographics in our data.
+  1. State: Top 5 states are PA, FL, TN, IN, MO.
+  2. Stars: 4.0 had the highest count, followed by 4.5. Distribution resembles a bell curve that is skewed left.
+  3. Category: Top 5 categories are: resturaunts, food, shopping, home services, beauty and spas. Resturaunts had an exceedingly high amount of reviews.
+  4. City: Top 5 cities areL Philadelphia, Tuscon, Tampa, Indianapolis, Nashville. This is consistent with the top 5 states. Further, there were a handful of cities with less than 3 businesses.
+
+User DataFrame:
+- Observation count: Total number of users = 1987897
+- Schema and column examination: To avoid repetition of information, please reference section 3.1.
+- Missing data analysis: No missing values.
+- Summary statistics: Mean review count was 23.4, but has a high standard devation of 82.6. Min = 0. Max = 17473.
+- Correlations: No correlations present.
+- Distribution of number of reviews: This part detected a handful of outliers. Specifically, there were a handful of users with more than 5,000 reviews. There were only about 10 users with no reviews, meaning that most users are active or were active users when they left the review.
+
+From the data exploration process, our team concluded that our project requires use of the Review DataFrame. The rest of this section only focuses on the Review DataFrame.
+  
 ### 4.2 Data Preprocessing
-1. Selecting features: Since we are trying to predict `stars` based on `text`, we only select these features. 
-2. Addressing Missing Values: In most cases, missing values occured when a user left a star rating on a business, but failed to include a written review. These rows were irrelevant to our specific analysis.
+1. Selecting features: Since we are trying to predict `stars` based on `text`, we only select these feature. All other features simply add unnecessary noise to our model.
+2. Addressing Missing Values: In most cases, missing values occured when a user left a star rating on a business, but failed to include a written review. These rows were irrelevant to our specific analysis, so they can simply be dropped.
 3. Add features: We added feature `review_length`, which is the length of a user's text.
-4. Tokenization: This is useful in simplifying text processing and enhancing machine learning models. It also improves text analysis and helps in understanding the syntax and semantics of the text.
-5. Stop Words Removal: This reduces dimensionality, decreases noise and therefore improves model performance, enhances text analysis, and facilitates efficient storage.
+4. Tokenization: This was found to be useful in simplifying text processing and enhancing machine learning models. It also improves text analysis and helps in understanding the syntax and semantics of the text.
+5. Stop Words Removal: This reduces dimensionality, decreases noise and therefore improves model performance, enhances text analysis, and facilitates efficient storage, which was a challenge given how large the dataset was.
 6. Stemming: The goal of stemming was to simplify text processing and analysis. This reduces dimensionality, improves search and information retrieval, and enhances text analysis.
 7. Sentiment Polarity Scores: This contributes to insights into customer sentiments and is helpful in predictive analytics.
-8. Term Frequency-Inverse Document Frequency (TF-IDF): This is useful for feature selection, reducing noise, and information retrieval.
+8. Term Frequency-Inverse Document Frequency (TF-IDF): This is useful for feature selection, reducing noise, and information retrieval. 
    
 ### 4.3 Model 1: Logistic Regression
 ### 4.4 Model 2: Support Vector Machine
