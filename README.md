@@ -20,28 +20,77 @@ The dataset used in this project is notable for its size and comprehensive infor
 ### 3.1 Data Exploration
 The Yelp API contains a variety of different datasets about the businesses, reviews, and users. For this analysis, we specifically used the review dataset. The dataset is obtained from Kaggle, available at this link https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset. To ensure ease of access, it is also replicated within this repository.
 
-The review dataset consistents of the following columns:
+The Business DataFrame consists of the following columns:
+- `business_id`: string, 22 character unique business id
+- `name`: string, the business's name
+- `address`: string, the full address of the business
+- `city`: string, the name of the city the business is located in
+- `state`: string, 2 character state code, if applicable
+- `postal_code`: string, the postal code the business is located in
+- `latitude`: float, latitude
+- `longitude`: float, longitude
+- `stars`: float, star rating, rounded to half stars
+- `review_count`: integer, number of reviews
+- `is_open`: integer, 0 if business is closed, 1 if business is open
+- `attributes`: object, business attributes to values 
+- `categories`: array of strings of business categories
+- `hours`: object of key day to value hours, hours use a 24 hour clock
 
-`review id`: string, 22 character unique review id
+The User DataFrame consists of the following columns:
+- `user_id`: string, 22 character unique user id, maps to the user in user.json
+- `name`: string, the user's first name
+- `review_count`: integer, the number of reviews each user has written
+- `yelping_since`: string, when the user joined Yelp, formatted as YYYY-MM-DD
+- `friends`: array of strings, an array of the user's friends as user_ids
+- `useful`: integer, number of useful votes sent by the user
+- `funny`: integer, number of funny votes sent by the user
+- `cool`: integer, number of cool votes sent by the user
+- `fans`: integer, number of fans the user has
+- `elite`: array of integers, the years the user was elite
+- `average_stars`: float, average rating of all reviews
+- `compliment_hot`: integer, number of hot compliments received by the user
+- `compliment_more`: integer, number of more compliments received by the user
+- `compliment_profile`: integer, number of profile compliments received by the user
+- `compliment_cute`: integer, number of cute compliments received by the user
+- `compliment_list`: integer, number of list compliments received by the user
+- `compliment_note`: integer, number of note compliments received by the user
+- `compliment_plain`: integer, number of plain compliments received by the user
+- `compliment_cool`: integer, number of cool compliments received by the user
+- `compliment_funny`: integer, number of funny compliments received by the user
+- `compliment_writer`: integer, number of writer compliments received by the user
+- `compliment_photos`: integer, number of photo compliments received by the user
 
-`user_id`: string, 22 character unique user id
+The Review DataFrame consists of the following columns:
+- `review id`: string, 22 character unique review id
+- `user_id`: string, 22 character unique user id
+- `business_id`: string, 22 character unique business id
+- `stars`: integer, star rating (1-5)
+- `date`: string, date formatted YYYY-MM-DD
+- `text`: string, the user's review
+- `useful`: integer, number of useful votes received
+- `funny`: integer, number of funny votes received
+- `cool`: integer, number of cool votes received
 
-`business_id`: string, 22 character unique business id
+To arrive at our conclusion of using the review dataset, we had to explore what information was contained in each dataset. The data exploration consists of serveral parts:
 
-`stars`: integer, star rating (1-5)
+Review DataFrame: Explore text statistics
+- Observation count: Identify the total number of reviews.
+- Column examination: Extract the column names and their respective types.
+- Missing data analysis: Detect missing values in the dataset. Missing data should not just be ignored. Often, there are underlying reasons for why this is occuring, so this section focuses on exploring those potential reasons.
+- Distribution of categorical variables: Explore the distribution of `stars`, `cool`, `funny`, `useful`
 
-`date`: string, date formatted YYYY-MM-DD
-
-`text`: string, the user's review
-
-`useful`: integer, number of useful votes received
-
-`funny`: integer, number of funny votes received
-
-`cool`: integer, number of cool votes received
-
-The data exploration consists of serveral parts:
-
+Business DataFrame: Explore business demographics
+- Observation count: Identify the total number of businesses.
+- Column examination: Extract the column names and their respective types.
+- Missing data analysis: Detect missing values in the dataset.
+- Value counts for categorical data: Explore value counts for variables `state`, `city`, `stars`, `category` to better understand the demographics in our data.
+  
+User DataFrame: Explore user demographics
+- Observation count: Identify the total number of users.
+- Column examination: Extract the column names and their respective types.
+- Missing data analysis: Detect missing values in the dataset. Specifically, how many users had no reviews.
+- Summary statistics: Extract summary statistics regarding the review count.
+- Correlations: Explore correlation between `star` and attributes `cool`, `funny`, `useful`.
 
 ### 3.2 Data Preprocessing
 1. Selecting features: Since we are trying to predict 'stars' based on 'text' we only select these features. 
