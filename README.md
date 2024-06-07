@@ -77,7 +77,7 @@ Review DataFrame: Explore text statistics
 - Observation count: Identify the total number of reviews.
 - Column examination: Extract the column names and their respective types.
 - Missing data analysis: Detect missing values in the dataset. Missing data should not just be ignored. Often, there are underlying reasons for why this is occuring, so this section focuses on exploring those potential reasons.
-- Distribution of categorical variables: Explore the distribution of `stars`, `cool`, `funny`, `useful`
+- Distribution of categorical variables: Explore the distribution of `stars`, `cool`, `funny`, `useful`.
 
 Business DataFrame: Explore business demographics
 - Observation count: Identify the total number of businesses.
@@ -93,21 +93,52 @@ User DataFrame: Explore user demographics
 - Correlations: Explore correlation between `star` and attributes `cool`, `funny`, `useful`.
 
 ### 3.2 Data Preprocessing
-1. Selecting features: Since we are trying to predict 'stars' based on 'text' we only select these features. 
-2. Addressing Missing Values: Eliminate rows containing missing values. In most cases, missing values occured when a user left a star rating on a business, but failed to include a written review. These rows were irrelevant to our specific analysis.
+1. Selecting features: Select only relevant features for our model. Since we are trying to predict `stars` based on `text`, we only select these features. 
+2. Addressing Missing Values: Eliminate rows containing missing values. 
 3. Add features: We added feature 'review_length', which is the length of a user's text.
-4. Tokenization: Split text into individual words. This is useful in simplifying text processing and enhancing machine learning models. It also improves text analysis and helps in understanding the syntax and semantics of the text.
-5. Stop Words Removal: Removal of common words from a text that have little to no semantic value in the context of the specific text processing task. This reduces dimensionality, decreases noise and therefore improves model performance, enhances text analysis, and facilitates efficient storage.
-6. Stemming:  Reduce words to theirr base or root form. The goal was to treat different forms of a word as the same word in order to simplify text processing and analysis. This reduces dimensionality, improves search and information retrieval, and enhances text analysis.
-7. Sentiment Polarity Scores: Generate numerical values that indicate the sentiment or emotional tone of a piece of text. This contributes to insights into customer sentiments and is helpful in predictive analytics.
-8. Term Frequency-Inverse Document Frequency (TF-IDF): Generate a numeric value that reflects the importance of a word in a document relative to a collection of documents. This is useful for feature selection, reducing noise, and information retrieval.
+4. Tokenization: Split text into individual words. 
+5. Stop Words Removal: Removal of common words from a text that have little to no semantic value in the context of the specific text processing task. 
+6. Stemming:  Reduce words to their base or root form. The goal was to treat different forms of a word as the same word.
+7. Sentiment Polarity Scores: Generate numerical values that indicate the sentiment or emotional tone of a piece of text. 
+8. Term Frequency-Inverse Document Frequency (TF-IDF): Generate a numeric value that reflects the importance of a word in a document relative to a collection of documents. 
    
-### 3.3 Model 1: Logistic Regression
+### 3.3 Model 1: Multinomial Logistic Regression
+Multinomial Logistic Regression: Predicts the rating (multi-class) based on user text. This extends binary logistic regression to handle our multi-class target variable.
+The logits for each category j are calculated relative to a reference category k:
+
+<img width="487" alt="Screenshot 2024-06-06 at 10 19 00 PM" src="https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/168300575/c4be8900-4f0e-4e40-aa55-34195edeccc3">
+
+The probabilities for each category are computed using the softmax function:
+
+<img width="434" alt="Screenshot 2024-06-06 at 10 19 45 PM" src="https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/168300575/88f1960c-0949-42b5-8f75-b15f3803c7d8">
+
+- Train Test Split: Split the dataset into training and testing sets to assess predictive performance and to avoid overfitting/underfitting.
+- Baseline model:
+- Feature Extension:
+- Accuracy Metric: Establish an assessment of model accuracy and generalizability.
+- Comparative Analysis:
+  
 ### 3.4 Model 2: Support Vector Machine
+Support Vector Machine: Predicts the rating (multi-class) based on user text. Since our target variable contains multiple classes, OneVsRest was also utilized here.
+
+- Train Test Split: Split the dataset into training and testing sets to assess predictive performance and to avoid overfitting/underfitting.
+- Baseline model:
+- Feature Extension:
+- Accuracy Metric: Establish an assessment of model accuracy and generalizability.
+- Comparative Analysis:
 
 ## Results
 ### 4.1 Data Exploration
 ### 4.2 Data Preprocessing
+1. Selecting features: Since we are trying to predict `stars` based on `text`, we only select these features. 
+2. Addressing Missing Values: In most cases, missing values occured when a user left a star rating on a business, but failed to include a written review. These rows were irrelevant to our specific analysis.
+3. Add features: We added feature 'review_length', which is the length of a user's text.
+4. Tokenization: This is useful in simplifying text processing and enhancing machine learning models. It also improves text analysis and helps in understanding the syntax and semantics of the text.
+5. Stop Words Removal: This reduces dimensionality, decreases noise and therefore improves model performance, enhances text analysis, and facilitates efficient storage.
+6. Stemming: The goal of stemming was to simplify text processing and analysis. This reduces dimensionality, improves search and information retrieval, and enhances text analysis.
+7. Sentiment Polarity Scores: This contributes to insights into customer sentiments and is helpful in predictive analytics.
+8. Term Frequency-Inverse Document Frequency (TF-IDF): This is useful for feature selection, reducing noise, and information retrieval.
+   
 ### 4.3 Model 1: Logistic Regression
 ### 4.4 Model 2: Support Vector Machine
 ### 4.5 Compare Model Performances
