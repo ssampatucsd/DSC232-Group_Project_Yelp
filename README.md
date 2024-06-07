@@ -4,8 +4,6 @@
 This repository contains the final project for DSC232, featuring a thorough analysis and the creation of predictive models aimed at predicting 'stars' from user review text. Within, you'll find datasets, analytical scripts, model training algorithms, and results designed to offer companies deeper insights into their customers' experiences. Comprehensive documentation is available to help you navigate each aspect of the project.
 
 ## 1. Introduction
-Why chosen? why is it cool? General/Broader impact of having a good predictive mode. i.e. why is this important? Expand on abstract.
-
 Yelp Inc. is a widely-used online platform where users can search for and review local businesses. Founded in 2004, it acts as a directory for various businesses, including restaurants, retail stores, services, and more. Yelp provides details about the business such as business hours, contact information, menus, photos, and user-generated reviews. Businesses can claim their Yelp profiles to interact with customers, post updates, and respond to reviews.
 
 Yelp has several positive impacts on businesses, such as increasing visibility, establishing credibility and trust, engaging with customers, gaining market insights, and providing advertising opportunities. For instance, Yelp can help businesses get discovered by new customers, driving foot traffic and online inquiries. However, there are also negative impacts, such as the potential for negative reviews to harm a business's reputation and revenue.
