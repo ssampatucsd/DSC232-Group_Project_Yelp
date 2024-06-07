@@ -21,14 +21,23 @@ The dataset used in this project is notable for its size and comprehensive infor
 The Yelp API contains a variety of different datasets about the businesses, reviews, and users. For this analysis, we specifically used the review dataset. The dataset is obtained from Kaggle, available at this link https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset. To ensure ease of access, it is also replicated within this repository.
 
 The review dataset consistents of the following columns:
+
 `review id`: string, 22 character unique review id
+
 `user_id`: string, 22 character unique user id
+
 `business_id`: string, 22 character unique business id
+
 `stars`: integer, star rating (1-5)
-`date`: string, date formattted YYYY-MM-DD
+
+`date`: string, date formatted YYYY-MM-DD
+
 `text`: string, the user's review
+
 `useful`: integer, number of useful votes received
+
 `funny`: integer, number of funny votes received
+
 `cool`: integer, number of cool votes received
 
 The data exploration consists of serveral parts:
