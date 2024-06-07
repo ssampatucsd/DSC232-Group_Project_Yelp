@@ -95,7 +95,7 @@ User DataFrame: Explore user demographics
 ### 3.2 Data Preprocessing
 1. Selecting features: Select only relevant features for our model. Since we are trying to predict `stars` based on `text`, we only select these features. 
 2. Addressing Missing Values: Eliminate rows containing missing values. 
-3. Add features: We added feature 'review_length', which is the length of a user's text.
+3. Add features: We added feature `review_length`, which is the length of a user's text.
 4. Tokenization: Split text into individual words. 
 5. Stop Words Removal: Removal of common words from a text that have little to no semantic value in the context of the specific text processing task. 
 6. Stemming:  Reduce words to their base or root form. The goal was to treat different forms of a word as the same word.
@@ -132,7 +132,7 @@ Support Vector Machine: Predicts the rating (multi-class) based on user text. Si
 ### 4.2 Data Preprocessing
 1. Selecting features: Since we are trying to predict `stars` based on `text`, we only select these features. 
 2. Addressing Missing Values: In most cases, missing values occured when a user left a star rating on a business, but failed to include a written review. These rows were irrelevant to our specific analysis.
-3. Add features: We added feature 'review_length', which is the length of a user's text.
+3. Add features: We added feature `review_length`, which is the length of a user's text.
 4. Tokenization: This is useful in simplifying text processing and enhancing machine learning models. It also improves text analysis and helps in understanding the syntax and semantics of the text.
 5. Stop Words Removal: This reduces dimensionality, decreases noise and therefore improves model performance, enhances text analysis, and facilitates efficient storage.
 6. Stemming: The goal of stemming was to simplify text processing and analysis. This reduces dimensionality, improves search and information retrieval, and enhances text analysis.
