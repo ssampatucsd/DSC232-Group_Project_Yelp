@@ -172,7 +172,7 @@ From the data exploration process, our team concluded that our project requires 
 8. Term Frequency-Inverse Document Frequency (TF-IDF): This is useful for feature selection, reducing noise, and information retrieval. 
    
 ### 4.3 Model 1: Multinomial Logistic Regression 
-A multinomial logistic regression was performed on the columns combined features and stars. It utilizes the combined features which was composed of review length and sentiment polarity done in previous steps to predict the star ratings on businesses. A grid search was done to get the best hyperparmeters for the model. The best regParam was 0.01 and best elasticNetParam was 0.3. The accuracy of this model is 61.94%.
+A multinomial logistic regression was performed on the columns combined features and stars. It utilizes the combined features which was composed of review length and sentiment polarity done in previous steps to predict the star ratings on businesses. A grid search was done to get the best hyperparmeters for the model and also cross validation was performed to further optimized the model. The best regParam was 0.01 and best elasticNetParam was 0.3. The accuracy of this model is 61.94%.
 
 ### 4.4 Model 2: Support Vector Machine with OneVsRest
 ### 4.5 Compare Model Performances
