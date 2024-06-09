@@ -185,7 +185,7 @@ A support vector machine was performed using the same combined features column a
 
 
 ### 4.5 Compare Model Performances
-
+Both models were utilized to predict the star ratings of businesses. The SVM model demonstrated superior accuracy compared to the logistic regression model because it is capable of capturing more complex and non-linear relationships in the data. Additionally, SVM's approach of maximizing the margin between classes makes it robust to overfitting, which likely contributed to its higher accuracy.
 
 ## 5. Discussion
 ### Data Exploration: Exploratory Data Analysis
