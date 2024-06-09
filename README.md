@@ -205,6 +205,8 @@ Multinomial Logistic Regression was chosen for our predictive modeling because i
 
 Our logistic regression model and support vector machine performed 61.94% and % accuracy in prediction, respectively, which indicate a reasonable performance, given the complexity in the review text. While the models provided valueable insights, there are two shortcomings. First, our models may be too simple that it may not capture complex relationship in the data. Second, other relevant features may be excluded during the feature engineering step. These shortcomings could impact the accuracy of the prediction. Our work is rarely a perfect solution, and future research is indeed needed. We could explore in a more advanced model, such as recurrent neural networks (RNNs) or a better technique for natural language prcessing (NLP). The quality of the data can be further examined to handle duplicates reviews and biases. Overall, our model has rooms for improvement and needs to be updated as new data becomes available or new methods are developed.
 
+Both logistic regression and support vector machine models are effective for predicting Yelp star ratings. The SVM's ability to handle non-linear relationships within the data and logistic regression's interpretability and efficiency allowed to explore the data in different ways. Future work could possibility include other kernels for SVM and other hyperparameters for improving the prediction accuracy.
+
 ### General Discussion
 Our project has highlighted the power of text classification models to extract consumer insights. This section outlines the successes achieved, the limitations encountered, and our future plans for extending this work.
 
