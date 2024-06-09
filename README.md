@@ -180,16 +180,20 @@ From the data exploration process, our team concluded that our project requires 
 8. Term Frequency-Inverse Document Frequency (TF-IDF): This is useful for feature selection, reducing noise, and information retrieval. 
    
 ### 4.3 Model 1: Multinomial Logistic Regression 
-A multinomial logistic regression was performed on the columns combined features and stars. It utilizes the combined features which was composed of review length and sentiment polarity done in previous steps to predict the star ratings on businesses. A grid search was done to get the best hyperparmeter values for regParam and elasticNetParam for the model and also cross validation was performed to further optimized the model. The best regParam was 0.01, which matched the ideal complexity in Figure 1., and the best elasticNetParam was 0.3. The accuracy of this model is 61.94%.
+A multinomial logistic regression was performed on the columns `combined features` and `stars`. It utilizes the combined features, which was composed of `review length`, `sentiment polarity`, and `TD-IDF` done in previous steps to predict the star ratings on businesses. A grid search was done to get the best hyperparmeter values for regParam and elasticNetParam for the model and also k-fold cross validation (k = 5) was performed to further optimize the model. The best regParam was 0.01, which matched the ideal complexity in Figure 1., and the best elasticNetParam was 0.3. The best CV test accuracy of this model is 61.94%.
+
+The underfitting/overfitting graph is displayed below:
+![image](https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/150002146/01109385-edc8-4dce-aa09-98031f8742b6)
 
 ### 4.4 Model 2: Support Vector Machine with OneVsRest
-A support vector machine was performed using the same combined features column as input and stars as ouput. The combined features again composed of review length and sentiment polarity. After running multiple values of hyperparameters and visualizing the results with a fitting graph, the best value of regParam was . This value resulted in similar training and test error and minimized both the training and test error, as shown in Figure 2. This shows that the model is neither underfitting nor overfitting the data.
+A support vector machine was performed using the same `combined features` column as input and `stars` as ouput. The combined features again composed of `review length`, `sentiment polarity`, and `TF-IDF`. After running multiple values of hyperparameters and visualizing the results with a fitting graph, the best value of regParam was 0.1. This value resulted in similar training and test error and minimized both the training and test error, as shown in Figure 2. This shows that the model is neither underfitting nor overfitting the data.
 
+The underfitting/overfitting graph is displayed below:
+
+![image](https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/150002146/5ca11384-229d-4167-ba0b-d11c10edd63e)
 
 ### 4.5 Compare Model Performances
 Both models were utilized to predict the star ratings of businesses. The SVM model demonstrated superior accuracy compared to the logistic regression model because it is capable of handling more complex and capturing the non-linear relationships in the data. Additionally, SVM's approach of maximizing the margin between classes makes it robust to overfitting, which likely contributed to its higher accuracy. Logistic regression finds linear relationships between the features and the star ratings, which causes a limitation when the actual relationships in the data are more complicated and not capturing all the nuances, which led to the lower accuracy. 
-
-
 
 ## 5. Discussion
 ### Data Exploration: Exploratory Data Analysis
