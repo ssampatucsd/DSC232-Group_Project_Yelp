@@ -122,19 +122,17 @@ The probabilities for each category are computed using the softmax function:
 <img width="434" alt="Screenshot 2024-06-06 at 10 19 45 PM" src="https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/168300575/88f1960c-0949-42b5-8f75-b15f3803c7d8">
 
 - Train Test Split: Split the dataset into training and testing sets to assess predictive performance and to avoid overfitting/underfitting.
-- Baseline model:
-- Feature Extension:
+- Baseline Model/Model Complexities: Begin with a baseline model/simpler model for comparative analysis and increase complexity to assess how this influences the model's training and testing error.
 - Accuracy Metric: Establish an assessment of model accuracy and generalizability.
-- Comparative Analysis:
+- Comparative Analysis: Compare training and testing errors for differing model complexities.
   
-### 3.4 Model 2: Support Vector Machine 
-Support Vector Machine: Predicts the rating (multi-class) based on user text. Since our target variable contains multiple classes, OneVsRest was also utilized here.
+### 3.4 Model 2: Support Vector Machine with OneVsRest
+Support Vector Machine: Predicts the rating (multi-class) based on user text. Since our target variable contains multiple classes, OneVsRest was also utilized here to account for our multi-class problem.
 
 - Train Test Split: Split the dataset into training and testing sets to assess predictive performance and to avoid overfitting/underfitting.
-- Baseline model:
-- Feature Extension:
+- Baseline Model/Model Complexities: Begin with a baseline model/simpler model for comparative analysis and increase complexity to assess how this influences the model's training and testing error.
 - Accuracy Metric: Establish an assessment of model accuracy and generalizability.
-- Comparative Analysis:
+- Comparative Analysis: Compare training and testing errors for differing model complexities.
 
 ## Results
 ### 4.1 Data Exploration
@@ -180,7 +178,7 @@ From the data exploration process, our team concluded that our project requires 
 ### 4.3 Model 1: Multinomial Logistic Regression 
 A multinomial logistic regression was performed on the columns combined features and stars. It utilizes the combined features which was composed of review length and sentiment polarity done in previous steps to predict the star ratings on businesses. A grid search was done to get the best hyperparmeter values for regParam and elasticNetParam for the model and also cross validation was performed to further optimized the model. The best regParam was 0.01, which matched the ideal complexity in Figure 1., and the best elasticNetParam was 0.3. The accuracy of this model is 61.94%.
 
-### 4.4 Model 2: Support Vector Machine 
+### 4.4 Model 2: Support Vector Machine with OneVsRest
 A support vector machine was performed using the same combined features column as input and stars as ouput. The combined features again composed of review length and sentiment polarity. After running multiple values of hyperparameters and visualizing the results with a fitting graph, the best value of regParam was . This value resulted in similar training and test error and minimized both the training and test error, as shown in Figure 2. This shows that the model is neither underfitting nor overfitting the data.
 
 
@@ -206,7 +204,7 @@ Further, we extracted sentiment polarity scores and TF-IDF. These were arguably 
 
 These preprocessing steps were essential for extracting meaningful information from text data, reducing noise, and improving the performance of our models. Each step played a cruicial role in ensuring that the data was both informative and manageable.
 
-### Model 1 and 2: Logistic Regression and Support Vector Machine
+### Model 1 and 2: Logistic Regression and Support Vector Machine 
 Initially, we thoroughly explored the dataset's structure, schema, and identify relevant features for model training. We selected the features that have influence on the the prediction of star ratings. Then, we split the data into training and testing set to evaluate the model's performance, and we trained and optimized the mondel through hyperparameter tuning using grid search and cross-validation. Lastly, we generated overfitting and underfitting graphs to help us better understand and select the ideal complexity for each model.
 
 Multinomial Logistic Regression was chosen for our predictive modeling because it extends binary logistic regression to handle multiple classes, which is essential for our multi-class target variable, the star ratings is from 1 to 5 stars. Logistic regression provides a probabilistic framework that is interpretable and can be valuable for understanding the certainty of predictions. Support vector machine (SVMs) was selected for our predictive modeling because of its robustness in handling high-dimensional data and effectiveness in mulit-classification tasks. SVMs can create complex decision boundaries and manage large feature space deriving from the review text data. 
