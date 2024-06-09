@@ -159,11 +159,11 @@ User DataFrame:
 - Correlations: No correlations present.
 - Distribution of number of reviews: This part detected a handful of outliers. Specifically, there were a handful of users with more than 5,000 reviews. 
 
-
+From the data exploration process, our team concluded that our project requires use of the Review DataFrame only. The rest of this section only focuses on the Review DataFrame.
   
 ### 4.2 Data Preprocessing
 1. Selecting features: Since we are trying to predict `stars` based on `text`, we only select these feature. All other features simply add unnecessary noise to our model.
-2. Addressing Missing Values: In most cases, missing values occured when a user left a star rating on a business, but failed to include a written review. These rows were irrelevant to our specific analysis, so they can simply be dropped.
+2. Addressing Missing Values: Missing values occured when a user left a star rating on a business, but failed to include a written review. 
 3. Add features: We added feature `review_length`, which is the length of a user's text.
 4. Tokenization: This was found to be useful in simplifying text processing and enhancing machine learning models. It also improves text analysis and helps in understanding the syntax and semantics of the text.
 5. Stop Words Removal: This reduces dimensionality, decreases noise and therefore improves model performance, enhances text analysis, and facilitates efficient storage, which was a challenge given how large the dataset was.
@@ -182,18 +182,27 @@ A multinomial logistic regression was performed on the columns combined features
 ### Data Exploration: Exploratory Data Analysis
 During the Exploratory Data Analysis (EDA) phase, we began by examining the number of observations in the Review DataFrame (6,990,280 unique reviews), Business DataFrame (150,346 unique businesses), and User DataFrame (1,987,897 unique users). Given the substantial sample size of reviews, we can be confident that our findings are generalizable. Further, the observation counts of the Business DataFrame and the User DataFrame show diversity in our modelling efforts. That is, the reviews come from a large number of businesses and many different users. Considering the Review DataFrame, we then explored missing values. Often, missing values can actually contain important information because in many cases, they are not just missing by chance. In this case, there were several observations with missing values in the `text` field, which indicated that a user left a rating on a business, but did not provide a text response. These values were dropped because they were irrelevant given our problem statement, so we can be confident that simply dropping missing values would not impact the integrity of our model. Although the Business DataFrame and User DataFrame were not used in modelling, it was still important that we explored these dataframes since all data frames in this API are related. In analyzing the demographics of the Business DataFrame, we can be confident that the reviews contain information on a variety of different businesses. This adds diversity and generalizability to the model since the reviews capture many different types of businesses in different areas of the United States. The User DataFrame contains the source of the reviews, or the actual user that wrote the review. There were only about ten users with no reviews, meaning that most users are active or were active users when they left the review. This is important in checking that the reviews were truly writtten by a human and are not "fake" reviews.
 
-From the data exploration process, our team concluded that our project requires use of the Review DataFrame only. The rest of this section only focuses on the Review DataFrame.
-
 ### Data Preprocessing
-During the Data Preprocessing phase of the study, various steps were taken to refine the dataset for subsequent modeling.
+During the Data Preprocessing phase of the study, various steps were taken to refine the dataset for subsequent modeling. Our problem consisted of a text classification problem, where we had only a `text` column (the actual review) to predict `stars` (the rating). Data preprocessing was essential to achieve this. Specifically, we performed tokenization, stop words removal, stemming, extracting sentiment polarity scores, and term frequency-inverse document frequency (TF-IDF). Tokenization was crucial for removing stop words, which allowed our models to focus on words that carry significant information about the sentiment and content of the review. Although stemming is a common preprocessing step, we did not utilize it in our final models.  We found that stemming did not significantly affect our results, and it was unnecessary to include it. It is good practice to build the simplest model possible withtout sacrificing accuracy. 
+
+Further, we extracted sentiment polarity scores and TF-IDF. These were arguably the most important data preprocessing methods for our project. Sentiment polarity scores provided an additional feature that captured the emotional tone of the review, which is often strongly correlated with the rating. This likely improved our predictive power, as sentiment is a key indicator of user satisfaction or dissatisfaction. Similarly, TF-IDF was crucial for modeling. It assigns higher weights to unique words in a review, improving the model's ability to differentiate between reviews. This helps identify key terms that significantly impact the classification, leading to better model performance.
+
+These preprocessing steps were essential for extracting meaningful information from text data, reducing noise, and improving the performance of our models. Each step played a cruicial role in ensuring that the data was both informative and manageable.
 
 ### Model 1: Logistic Regression
+
 ### Model 2: Support Vector Machine
+
 ### General Discussion
+Our project has highlighted the power of text classification models to extract consumer insights. This sectionn outlines the successes achieved, the limitations encountered, and our future plans for extending this work.
+
 #### Success
+
 #### Limitations
 
 ## 6. Conclusion
 
 ## 7. Collaboation
+Lian Martin, Christie Ma, Emily Zhuang, Johnson Tso, and Sanjay Sampat worked well together and collaborated as a team throughout this project.
 
+Lian Martin participated by creating visualizations for categorical variables and contributed to the Logistic Regression and SVM models. She also took the initiative and contributed to an extensive amount of the final write up (introduction, methods, results, and discussion).
