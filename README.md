@@ -18,6 +18,7 @@ The dataset used in this project is notable for its size and comprehensive infor
 ![image](https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/150002146/01109385-edc8-4dce-aa09-98031f8742b6)
 Figure 1.
 
+![image](https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/150002146/5ca11384-229d-4167-ba0b-d11c10edd63e)
 Figure 2.
 
 
