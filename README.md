@@ -15,6 +15,11 @@ This project aims to predict a business's rating out of five stars based on user
 The dataset used in this project is notable for its size and comprehensive information. It is a subset of Yelp's data, containing information about businesses, reviews, and users across eight metropolitan areas in the USA and Canada. The data, sourced directly from Yelp.com, includes 7 million customer reviews and features 150,000 businesses. The credibility, size, and richness of the data were the main reasons for choosing this dataset.
 
 ## 2. Figures
+![image](https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/150002146/01109385-edc8-4dce-aa09-98031f8742b6)
+Figure 1.
+
+Figure 2.
+
 
 ## 3. Methods
 ### 3.1 Data Exploration
