@@ -16,6 +16,7 @@ The dataset used in this project is notable for its size and comprehensive infor
 
 ## 2. Figures
 Green line = Error on the test dataset
+
 Red line = Error on the train dataset
 
 ![image](https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/150002146/01109385-edc8-4dce-aa09-98031f8742b6)
