@@ -186,7 +186,7 @@ The underfitting/overfitting graph is displayed below:
 ![image](https://github.com/ssampatucsd/DSC232-Group_Project_Yelp/assets/150002146/01109385-edc8-4dce-aa09-98031f8742b6)
 
 ### 4.4 Model 2: Support Vector Machine with OneVsRest
-A support vector machine was performed using the same `combined features` column as input and `stars` as ouput. The combined features again composed of `review length`, `sentiment polarity`, and `TF-IDF`. After running multiple values of hyperparameters and visualizing the results with a fitting graph, the best value of regParam was 0.1. This value resulted in similar training and test error and minimized both the training and test error, as shown in Figure 2. This shows that the model is neither underfitting nor overfitting the data.
+A support vector machine was performed using the same `combined features` column as input and `stars` as ouput. The combined features again composed of `review length`, `sentiment polarity`, and `TF-IDF`. After running multiple values of hyperparameters and visualizing the results with a fitting graph, the best value of regParam was 0.1. This value resulted in fairly consistent training and test errors and minimized both the training and test error, as shown in Figure 2. This shows that the model is neither underfitting nor overfitting the data.
 
 The underfitting/overfitting graph is displayed below:
 
