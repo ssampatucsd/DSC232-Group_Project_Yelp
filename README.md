@@ -181,7 +181,9 @@ A multinomial logistic regression was performed on the columns combined features
 
 ### 4.4 Model 2: Support Vector Machine 
 
+
 ### 4.5 Compare Model Performances
+
 
 ## 5. Discussion
 ### Data Exploration: Exploratory Data Analysis
@@ -202,10 +204,14 @@ These preprocessing steps were essential for extracting meaningful information f
 Our project has highlighted the power of text classification models to extract consumer insights. This section outlines the successes achieved, the limitations encountered, and our future plans for extending this work.
 
 #### Success
+Our extensive exploratory data preprocessing on the review text allowed us to effectively refine the dataset. These reprocessing steps significantly improved our model performance by reducing noise and extracting meaningful features, such as TF-IDF and sentiment polarity scores. Also, we were able to successfully apply multinomial logistic regression model to demonstrate its effectiveness in handling multi-class classification tasks.
 
 #### Limitations
+One of the limitations we ecountered was the variability in review length and the duplicate reviews, which could introduce bias into the model. Although we addressed the mising values and performed data cleaning, there is always the potential for unseen biases in such large datasets. These limitations could explain the resuts of low accuracy in the predictions from our two models.
 
 ## 6. Conclusion
+This project demonstrated the value of machine learning techniques, specifically in logistic regression and support vector machine, in deriving actionable insights from the user's review texts. By predicting star ratings based on review texts, businesses can better understand customer sentiments and improve their services to increase customer satisfaction. While our models have shown promising results, there is room for improvement. We could explore more complex text processing techniques, such as deep learning models, to further enhance predictive accuracy. In addition, we could incorporate other features from the Yelp dataset, such as business attributes, category, longitude, and latitude, to provide a more holistic view and to potentially improve the model performance. Despite the limitation of mitigating potential biases in the dataset, the project underscores the potential of applying machine learning to extract valuable insights from textual data, enabling business to gain a deeper understanding of their customers' need and the companys' services that need further improvement.
+
 
 ## 7. Collaboation
 Lian Martin, Christie Ma, Emily Zhuang, Johnson Tso, and Sanjay Sampat worked well together and collaborated as a team throughout this project.
