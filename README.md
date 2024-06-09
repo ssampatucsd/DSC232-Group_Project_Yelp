@@ -121,7 +121,7 @@ The probabilities for each category are computed using the softmax function:
 - Accuracy Metric: Establish an assessment of model accuracy and generalizability.
 - Comparative Analysis:
   
-### 3.4 Model 2: Support Vector Machine with OneVsRest
+### 3.4 Model 2: Support Vector Machine 
 Support Vector Machine: Predicts the rating (multi-class) based on user text. Since our target variable contains multiple classes, OneVsRest was also utilized here.
 
 - Train Test Split: Split the dataset into training and testing sets to assess predictive performance and to avoid overfitting/underfitting.
@@ -174,7 +174,7 @@ From the data exploration process, our team concluded that our project requires 
 ### 4.3 Model 1: Multinomial Logistic Regression 
 A multinomial logistic regression was performed on the columns combined features and stars. It utilizes the combined features which was composed of review length and sentiment polarity done in previous steps to predict the star ratings on businesses. A grid search was done to get the best hyperparmeters for the model and also cross validation was performed to further optimized the model. The best regParam was 0.01 and best elasticNetParam was 0.3. The accuracy of this model is 61.94%.
 
-### 4.4 Model 2: Support Vector Machine with OneVsRest
+### 4.4 Model 2: Support Vector Machine 
 
 ### 4.5 Compare Model Performances
 
@@ -194,7 +194,7 @@ These preprocessing steps were essential for extracting meaningful information f
 ### Model 2: Support Vector Machine
 
 ### General Discussion
-Our project has highlighted the power of text classification models to extract consumer insights. This sectionn outlines the successes achieved, the limitations encountered, and our future plans for extending this work.
+Our project has highlighted the power of text classification models to extract consumer insights. This section outlines the successes achieved, the limitations encountered, and our future plans for extending this work.
 
 #### Success
 
