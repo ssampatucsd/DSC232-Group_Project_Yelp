@@ -135,7 +135,7 @@ Support Vector Machine: Predicts the rating (multi-class) based on user text. Si
 Review DataFrame: 
 - Observation count: Total number of reviews = 6,990,280.
 - Schema and column examination: To avoid repetition of information, please reference section 3.1.
-- Missing data analysis: Missing values in `text` column indicate users that provided a rating, but failed to include text with their rating.
+- Missing data analysis: Missing values in `text` column.
 - Duplicate values: Multiple duplicate values in `text`, specifically containing "DO NOT PARK HERE!", "I had a terrible experience", "Great place to be."
 - Summary statistics: Average review length is 567.76, however, this variable has a large standard deviation of 527.25. Min review length = 1. Max review length = 5000.
 - Distribution of categorical variables:
@@ -152,14 +152,14 @@ Business DataFrame:
   4. City: Top 5 cities are: Philadelphia, Tuscon, Tampa, Indianapolis, Nashville. This is consistent with the top 5 states. Further, there were a handful of cities with less than 3 businesses.
 
 User DataFrame:
-- Observation count: Total number of users = 1987897
+- Observation count: Total number of users = 1,987,897.
 - Schema and column examination: To avoid repetition of information, please reference section 3.1.
 - Missing data analysis: No missing values.
 - Summary statistics: Mean review count was 23.4, but has a high standard devation of 82.6. Min = 0. Max = 17473.
 - Correlations: No correlations present.
-- Distribution of number of reviews: This part detected a handful of outliers. Specifically, there were a handful of users with more than 5,000 reviews. There were only about 10 users with no reviews, meaning that most users are active or were active users when they left the review.
+- Distribution of number of reviews: This part detected a handful of outliers. Specifically, there were a handful of users with more than 5,000 reviews. 
 
-From the data exploration process, our team concluded that our project requires use of the Review DataFrame. The rest of this section only focuses on the Review DataFrame.
+
   
 ### 4.2 Data Preprocessing
 1. Selecting features: Since we are trying to predict `stars` based on `text`, we only select these feature. All other features simply add unnecessary noise to our model.
@@ -175,11 +175,18 @@ From the data exploration process, our team concluded that our project requires 
 A multinomial logistic regression was performed on the columns combined features and stars. It utilizes the combined features which was composed of review length and sentiment polarity done in previous steps to predict the star ratings on businesses. A grid search was done to get the best hyperparmeters for the model and also cross validation was performed to further optimized the model. The best regParam was 0.01 and best elasticNetParam was 0.3. The accuracy of this model is 61.94%.
 
 ### 4.4 Model 2: Support Vector Machine with OneVsRest
+
 ### 4.5 Compare Model Performances
 
 ## 5. Discussion
 ### Data Exploration: Exploratory Data Analysis
+During the Exploratory Data Analysis (EDA) phase, we began by examining the number of observations in the Review DataFrame (6,990,280 unique reviews), Business DataFrame (150,346 unique businesses), and User DataFrame (1,987,897 unique users). Given the substantial sample size of reviews, we can be confident that our findings are generalizable. Further, the observation counts of the Business DataFrame and the User DataFrame show diversity in our modelling efforts. That is, the reviews come from a large number of businesses and many different users. Considering the Review DataFrame, we then explored missing values. Often, missing values can actually contain important information because in many cases, they are not just missing by chance. In this case, there were several observations with missing values in the `text` field, which indicated that a user left a rating on a business, but did not provide a text response. These values were dropped because they were irrelevant given our problem statement, so we can be confident that simply dropping missing values would not impact the integrity of our model. Although the Business DataFrame and User DataFrame were not used in modelling, it was still important that we explored these dataframes since all data frames in this API are related. In analyzing the demographics of the Business DataFrame, we can be confident that the reviews contain information on a variety of different businesses. This adds diversity and generalizability to the model since the reviews capture many different types of businesses in different areas of the United States. The User DataFrame contains the source of the reviews, or the actual user that wrote the review. There were only about ten users with no reviews, meaning that most users are active or were active users when they left the review. This is important in checking that the reviews were truly writtten by a human and are not "fake" reviews.
+
+From the data exploration process, our team concluded that our project requires use of the Review DataFrame only. The rest of this section only focuses on the Review DataFrame.
+
 ### Data Preprocessing
+During the Data Preprocessing phase of the study, various steps were taken to refine the dataset for subsequent modeling.
+
 ### Model 1: Logistic Regression
 ### Model 2: Support Vector Machine
 ### General Discussion
