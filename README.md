@@ -238,3 +238,4 @@ This project demonstrated the value of machine learning techniques, specifically
 Lian Martin, Christie Ma, Emily Zhuang, Johnson Tso, and Sanjay Sampat worked well together and collaborated as a team throughout this project.
 
 Lian Martin participated by creating visualizations for categorical variables and contributed to the Logistic Regression and SVM models. She also took the initiative and contributed to an extensive amount of the final write up (introduction, methods, results, and discussion).
+Christie contributed through preparing the initial dataset and exploring the data in different ways. She helped to improve the model and finding parameters, although not used ultimately. She also wrote the comparison between models and parts of the conclusion.
